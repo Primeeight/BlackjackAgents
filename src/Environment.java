@@ -6,16 +6,15 @@
  */
 
 public interface Environment {
-
+    void setupENV();
     boolean isFinished();
-    //Steps taken so far.
-    int steps();
-    long startTime();
-    long stopTime();
+    void startTime();
+    void stopTime(long startTime);
     //Add an agent
-    void addAgent();
+    void addAgents();
     //Remove an agent
-    void removeAgent();
+    void removeAgent(String agentName);
+    String[] getAgents();
     void step();
     //Step a number of steps forward.
     default void step(int n) {
