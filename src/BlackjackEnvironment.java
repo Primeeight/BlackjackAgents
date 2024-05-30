@@ -9,6 +9,7 @@ public class BlackjackEnvironment implements Environment {
         int steps;
         long time;
         public void simpleReflexAgent() {
+            //Is this internal memory?
             int sum = 0;
             for (int i = 0; i < playerHand.size(); i++) {
                 sum += playerHand.get(i);
@@ -37,6 +38,22 @@ public class BlackjackEnvironment implements Environment {
                 playerHand.add(getCard());
                 simpleReflexAgent();
             }
+        }
+        public void tableDriven(){
+            int sum = 0;
+            for (int i = 0; i < playerHand.size(); i++) {
+                sum += playerHand.get(i);
+            }
+            System.out.println("My hand is " + sum);
+            //Rules and actions
+            String[][] actions ={
+                    {"HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT"},
+                    {"HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT"},
+                    {"HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT"},
+                    {"HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT"},
+                    {"HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT","HIT"}
+            };
+
         }
         public void  startTime() {
             time = System.currentTimeMillis();
